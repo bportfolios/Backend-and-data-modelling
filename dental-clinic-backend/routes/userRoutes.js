@@ -4,14 +4,16 @@ const {
   registerController,
   dentistController,
   updateUserProfileController,
-  getUserByIdController,
   deleteUserByIdController,
 } = require("../controllers/userControllers");
 const {
   getAllDentistsController,
+  getDentistByIdController,
 } = require("../controllers/dentistControllers");
 const {
   userAppointmentsController,
+  bookAppointmnetController,
+  checkAvailabilityController,
 } = require("../controllers/appointmentControllers");
 const authMiddleware = require("../middleware/authMiddleware");
 
@@ -26,7 +28,6 @@ router.put(
   authMiddleware,
   updateUserProfileController
 );
-router.get("/getUserById/:userId", authMiddleware, getUserByIdController);
 router.delete(
   "/deleteUserById/:userId",
   authMiddleware,
@@ -34,5 +35,14 @@ router.delete(
 );
 
 router.get("/getAllDentists", authMiddleware, getAllDentistsController);
+router.get(
+  "/getDentistById/:dentistId",
+  authMiddleware,
+  getDentistByIdController
+);
 router.post("/userAppointments", authMiddleware, userAppointmentsController);
+
+router.post("/bookAppointment", authMiddleware, bookAppointmnetController);
+router.post("/checkAvailability", authMiddleware, checkAvailabilityController);
+
 module.exports = router;

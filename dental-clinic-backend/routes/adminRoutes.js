@@ -5,17 +5,23 @@ const {
 } = require("../controllers/adminControllers");
 const {
   getAllAppointmentsController,
+  getAppointmentByIdController,
+  updateAppointmentController,
   deleteAppointmentByIdController,
   bookAppointmnetController,
+  checkAvailabilityController,
 } = require("../controllers/appointmentControllers");
 const {
   registerController,
   dentistController,
   getUserByIdController,
+  updateUserProfileController,
   deleteUserByIdController,
 } = require("../controllers/userControllers");
 const {
   getAllDentistsController,
+  getDentistByIdController,
+  updateDentistProfileController,
   deleteDentistByIdController,
 } = require("../controllers/dentistControllers");
 
@@ -38,6 +44,33 @@ router.get("/getAllDentists", authMiddleware, getAllDentistsController);
 router.get("/getAllAppointments", authMiddleware, getAllAppointmentsController);
 
 router.get("/getUserById/:userId", authMiddleware, getUserByIdController);
+router.get(
+  "/getDentistById/:dentistId",
+  authMiddleware,
+  getDentistByIdController
+);
+router.get(
+  "/getAppointmentById/:appointmentId",
+  authMiddleware,
+  getAppointmentByIdController
+);
+
+router.put(
+  "/updateUserProfile/:userId",
+  authMiddleware,
+  updateUserProfileController
+);
+router.put(
+  "/updateDentistProfile/:dentistId",
+  authMiddleware,
+  updateDentistProfileController
+);
+router.put(
+  "/updateAppointmentProfile/:appointmentId",
+  authMiddleware,
+  updateAppointmentController
+);
+
 router.delete("/deleteUser/:userId", authMiddleware, deleteUserByIdController);
 router.delete(
   "/deleteDentist/:dentistId",
@@ -45,9 +78,12 @@ router.delete(
   deleteDentistByIdController
 );
 router.delete(
-  "/deleteAppointment/:appointmentId",
+  "/deleteAppointmentById/:appointmentId",
   authMiddleware,
   deleteAppointmentByIdController
 );
+
+router.post("/bookAppointment", authMiddleware, bookAppointmnetController);
+router.post("/checkAvailability", authMiddleware, checkAvailabilityController);
 
 module.exports = router;

@@ -175,15 +175,27 @@ const getAllAppointmentsController = async (req, res) => {
 };
 const updateAppointmentController = async (req, res) => {
   try {
-    const appointment = await appointmentModel.findOneAndUpdate(
-      { _id: req.params.appointmentId },
-      req.body
-    );
-    res.status(201).send({
-      success: true,
-      message: "appointment Updated",
-      data: appointment,
-    });
+    if (req.user.isAdmin) {
+      const appointment = await appointmentModel.findOneAndUpdate(
+        { _id: req.params.appointmentId },
+        req.body
+      );
+      res.status(201).send({
+        success: true,
+        message: "appointment Updated",
+        data: appointment,
+      });
+    } else {
+      const appointment = await appointmentModel.findOneAndUpdate(
+        { _id: req.params.appointmentId, userId: req.user._id },
+        req.body
+      );
+      res.status(201).send({
+        success: true,
+        message: "appointment Updated",
+        data: appointment,
+      });
+    }
   } catch (error) {
     console.log(error);
     res.status(500).send({
@@ -195,14 +207,26 @@ const updateAppointmentController = async (req, res) => {
 };
 const deleteAppointmentByIdController = async (req, res) => {
   try {
-    const appointment = await appointmentModel.findByIdAndDelete({
-      _id: req.params.appointmentId,
-    });
-    res.status(201).send({
-      success: true,
-      message: "appointment deleted",
-      data: appointment,
-    });
+    if (req.user.isAdmin) {
+      const appointment = await appointmentModel.findByIdAndDelete({
+        _id: req.params.appointmentId,
+      });
+      res.status(201).send({
+        success: true,
+        message: "appointment deleted",
+        data: appointment,
+      });
+    } else {
+      const appointment = await appointmentModel.findOneAndUpdate({
+        _id: req.params.appointmentId,
+        userId: req.user._id,
+      });
+      res.status(201).send({
+        success: true,
+        message: "appointment deleted",
+        data: appointment,
+      });
+    }
   } catch (error) {
     console.log(error);
     res.status(500).send({
