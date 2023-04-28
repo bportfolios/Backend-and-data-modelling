@@ -71,9 +71,9 @@ router.put(
   updateAppointmentController
 );
 
-router.delete("/deleteUser/:userId", authMiddleware, deleteUserByIdController);
+router.delete("/deleteUserById/:userId", authMiddleware, deleteUserByIdController);
 router.delete(
-  "/deleteDentist/:dentistId",
+  "/deleteDentistById/:dentistId",
   authMiddleware,
   deleteDentistByIdController
 );

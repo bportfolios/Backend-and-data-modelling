@@ -40,7 +40,7 @@ router.get(
   authMiddleware,
   getDentistByIdController
 );
-router.post("/userAppointments", authMiddleware, userAppointmentsController);
+router.get("/userAppointments", authMiddleware, userAppointmentsController);
 
 router.post("/bookAppointment", authMiddleware, bookAppointmnetController);
 router.post("/checkAvailability", authMiddleware, checkAvailabilityController);

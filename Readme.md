@@ -22,8 +22,8 @@ The admin is able to check following with endpoint prefix of `http://localhost:8
 - `/updateUserProfile/:userId` - updates the user details by its Id
 - `/updateDentistProfile/:dentistId` - updates the dentist details by its Id
 - `/updateAppointmentProfile/:appointmentId` - updates the appointment details by its Id
-- `/deleteUser/:userId` - delete user by its Id
-- `/deleteDentist/:dentistId` - delete user by its Id
+- `/deleteUserById/:userId` - delete user by its Id
+- `/deleteDentistById/:dentistId` - delete user by its Id
 - `/deleteAppointment/:appointmentId` - delete appointment by its Id
 - `/changeAccountStatus` - approves the requested dentist account from registered users.
 
@@ -37,7 +37,7 @@ The user is able to perform following endpoint calls with prefix of `http://loca
 - `/getDentistById/:dentistId` - gets the dentist by its Id
 - `/userAppointments` - gets all appointment made by the logged in user
 - `/updateUserProfile/:userId` - updates the own details
-- `/deleteUser/:userId` - delete own account
+- `/deleteUserById/:userId` - delete own account
 - `/updateAppointmentProfile/:appointmentId` - updates the logged in user's appointment details by its Id
 - `/deleteAppointment/:appointmentId` - delete the logged in user's appointment by its Id
 ### Dentist Endpoint

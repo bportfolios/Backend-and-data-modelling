@@ -2,7 +2,6 @@ const userModel = require("../models/userModel");
 const dentistModel = require("../models/dentistModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const moment = require("moment");
 
 const loginController = async (req, res) => {
   try {
@@ -57,7 +56,7 @@ const dentistController = async (req, res) => {
   try {
     if (req.user.isAdmin) {
       const newDentist = await dentistModel({
-        userId: _id,
+        userId: req.user._id,
         ...req.body,
         status: "approved",
       });
