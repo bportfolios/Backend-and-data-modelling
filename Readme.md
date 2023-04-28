@@ -50,3 +50,24 @@ The user is able to perform following endpoint calls with prefix of `http://loca
 - `/deleteDentistById/:dentistId` - delete own account as dentist
 
 ![Dental Clinic Application Architecture](/images/dental-clinic-architech.drawio.png "Dental Clinic Reservation App")
+
+![Logical Diagram of Dental Clinic Reservation Application](/images/LDM_Dental_Reservation.png "Logical Diagram of Dental Clinic Reservation App")
+
+## Work logs
+- 11th and 12th March: 6 hours - research and material readings
+- 18th and 19th March: 6 hours - material reading and research with initial data modelling and code dev
+- 25th and 26th March: 8 hours - register, login, jwt and basic get requests code dev
+- 1st and 2nd April: 6 hours - create and post request code dev
+- 7th, 8th, 9th and 10th April: 24 hours - update and delete request 
+- 15th and 16th April: 6 hours - code improvements and research
+- 22nd and 23rd April: 6 hours - overall project improvements and manual testing
+- 27th April: 3 hours - api documentation 
+- 28th April: 8 hours - documentation, repository creation, finalization and project submit
+
+## My Thoughts on building project
+The overall building backend project using Node.js, Express.js and MongoDB was full of learning and fun. Node.js is an easy programming language. npm provides a good packaging controls to the app. The server set up was short and easy. The endpoint division among the admin, normal user and dentist was little bit confusing to manage. The greatest learning experience for me was to be able to create a restful api from data modelling and designing to finishing up with a full working project with user authentication using json web token (jwt). I have fulfilled the both core and extra requirement of the assginment as a new user, dentist and appointment can be created, modified and deleted. User can book new appointment with dentist and they can see thier own appointments and also edit and delete them. Multiple reservation can be make by different user in same time. Admin can see all users, dentists, appointments and can also modify and delete them. JWT is implemented. Since I have full all the requirements of the assignment, I propose full grade of 5 for this assignment.
+
+### Notes 
+The code in this project are all written by me referring the course materials and node.js documentaion pages. There might me minor response messages copy paste but not a full code from stackoverflow but mostly are from course materials and node documentations.
+
+### Demo video link
