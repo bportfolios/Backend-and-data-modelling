@@ -42,9 +42,11 @@ The user is able to perform following endpoint calls with prefix of `http://loca
 - `/deleteAppointment/:appointmentId` - delete the logged in user's appointment by its Id
 ### Dentist Endpoint
 A user applies for the dentist account to the admin with their hours availability, fee and their expertise. The dentist account is create to that user after admin has approved for the account.
-The user is able to perform following endpoint calls with prefix of `http://localhost:8080/api/v1/user`:
+The user is able to perform following endpoint calls with prefix of `http://localhost:8080/api/v1/dentist`:
 - `/getAllDentists` - gets all dentists
 - `/getDentistById/:dentistId` - gets the dentist by its Id
 - `/dentistAppointments` - gets all appointment for the logged in dentist
 - `/updateDentistProfile/:dentistId` - updates the own details
 - `/deleteDentistById/:dentistId` - delete own account as dentist
+
+![Dental Clinic Application Architecture](/images/dental-clinic-architech.drawio.png "Dental Clinic Reservation App")
