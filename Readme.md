@@ -51,7 +51,7 @@ The user is able to perform following endpoint calls with prefix of `http://loca
 
 ![Dental Clinic Application Architecture](/images/dental-clinic-architech.drawio.png "Dental Clinic Reservation App")
 
-![Logical Diagram of Dental Clinic Reservation Application](/images/LDM_Dental_Reservation.png "Logical Diagram of Dental Clinic Reservation App")
+![Logical Diagram of Dental Clinic Reservation Application](/images/LDM_Dental_Reservation_v2.jpg "Logical Diagram of Dental Clinic Reservation App")
 
 ## Work logs
 - 11th and 12th March: 6 hours - research and material readings
